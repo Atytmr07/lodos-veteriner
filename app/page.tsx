@@ -12,6 +12,53 @@ export default function Home() {
 
     return (
         <main className="min-h-screen flex flex-col font-sans text-slate-800 relative">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "VeterinaryCare",
+                        "name": business.name,
+                        "image": "https://lodosveteriner.com/hero-vet.jpg",
+                        "url": "https://lodosveteriner.com",
+                        "telephone": business.phone,
+                        "priceRange": "₺₺",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "Barış Manço Blv. No:204/35",
+                            "addressLocality": "Kepez",
+                            "addressRegion": "Antalya",
+                            "postalCode": "07000",
+                            "addressCountry": "TR"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 36.9436,
+                            "longitude": 30.6789
+                        },
+                        "openingHoursSpecification": [
+                            {
+                                "@type": "OpeningHoursSpecification",
+                                "dayOfWeek": [
+                                    "Monday",
+                                    "Tuesday",
+                                    "Wednesday",
+                                    "Thursday",
+                                    "Friday",
+                                    "Saturday",
+                                    "Sunday"
+                                ],
+                                "opens": "11:00",
+                                "closes": "19:30"
+                            }
+                        ],
+                        "sameAs": [
+                            business.instagram,
+                            business.googleMapsUrl
+                        ]
+                    })
+                }}
+            />
             {/* Floating WhatsApp Button */}
             <a
                 href={`https://wa.me/${business.phone.replace(/\s+/g, '')}`}

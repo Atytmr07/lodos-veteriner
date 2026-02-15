@@ -10,8 +10,32 @@ const leagueSpartan = League_Spartan({
 })
 
 export const metadata: Metadata = {
-    title: config.business.name,
-    description: config.business.slogan,
+    title: {
+        template: '%s | Lodos Veteriner Kliniği',
+        default: 'Antalya Veteriner - Lodos Veteriner Kliniği | Kepez',
+    },
+    description: "Antalya Kepez Masadağı bölgesinde 7/24 acil veteriner, aşı, kısırlaştırma ve cerrahi hizmetleri. Lodos Veteriner Kliniği - Minik dostlarınız için güvenli liman.",
+    keywords: ["Antalya veteriner", "Kepez veteriner", "Masadağı veteriner", "acil veteriner antalya", "kedi kısırlaştırma", "köpek aşısı", "Lodos Veteriner"],
+    openGraph: {
+        title: 'Antalya Veteriner - Lodos Veteriner Kliniği',
+        description: 'Antalya Kepez bölgesinde modern tıbbi imkanlarla sevimli dostlarınız için güvenilir veteriner hizmeti.',
+        url: 'https://lodosveteriner.com',
+        siteName: 'Lodos Veteriner Kliniği',
+        images: [
+            {
+                url: 'https://lodosveteriner.com/hero-vet.jpg', // Ensure this image exists or use a valid one
+                width: 1200,
+                height: 630,
+                alt: 'Lodos Veteriner Kliniği',
+            },
+        ],
+        locale: 'tr_TR',
+        type: 'website',
+    },
+    robots: {
+        index: true,
+        follow: true,
+    },
 }
 
 export default function RootLayout({
